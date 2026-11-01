@@ -1,0 +1,27 @@
+plugins {
+    id 'application'
+}
+
+application {
+    mainClass = 'code'
+}
+
+java {
+    sourceCompatibility = JavaVersion.current()
+    targetCompatibility = JavaVersion.current()
+}
+
+repositories {
+    mavenCentral()
+}
+
+// Fat JAR: single .jar with all classes + dependencies, runnable via java -jar
+jar {
+    manifest {
+        attributes 'Main-Class': application.mainClass
+    }
+    from {
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+}
