@@ -1,3 +1,6 @@
+
+This is the javaprogramSD, but now deployed with gradle to allow others to use!
+
 # Choose-your-own adventure game!
 A simulation for users to test their survival skills after being stranded in a desert!  
 ![example of this in Codiva](<Desktop/Screenshot 2026-06-29 at 11.05.58 PM.png>). 
